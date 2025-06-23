@@ -50,9 +50,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Pizza />
-      <Pizza />
-      <Pizza />
+      <Menu />
       <Footer />
     </div>
   );
@@ -62,9 +60,28 @@ function Header() {
   return <h1>Dough & Fire Pizza</h1>;
 }
 
-function Menu() {}
+function Menu() {
+  return (
+    <div>
+      <h2>Our Menu</h2>
+      <Pizza />
+      <Pizza />
+      <Pizza />
+    </div>
+  );
+}
 
 function Footer() {
+  const hour = new Date().getHours();
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen);
+
+  //   if (hour >= openHour && hour <= closeHour)
+  //     alert("Doors open. Ovens hot. Cravings welcome.");
+  //   else alert("Doors closed. Ovens cooled. Cravings postponed. See you soon!");
+
   return (
     <footer>
       {new Date().toLocaleTimeString()} Doors open. Ovens hot. Cravings welcome.
