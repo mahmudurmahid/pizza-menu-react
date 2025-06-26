@@ -120,7 +120,15 @@ function Footer() {
 
   return (
     <footer className="footer">
-      {new Date().toLocaleTimeString()} Doors open. Ovens hot. Cravings welcome.
+      {isOpen && (
+        <div className="order">
+          <p>
+            Doors Open until {closeHour}:00. Ovens hot. Cravings welcome. Come
+            visit or order online
+          </p>
+          <button className="btn">Order Your Pizza</button>
+        </div>
+      )}
     </footer>
   );
   //   return React.createElement(
