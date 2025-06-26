@@ -48,13 +48,13 @@ const pizzaData = [
 ];
 
 function App() {
-  return (
+    return (
     <div className="container">
-      <Header />
-      <Menu />
-      <Footer />
+        <Header />
+        <Menu />
+        <Footer />
     </div>
-  );
+    );
 }
 
 function Header() {
@@ -69,73 +69,74 @@ function Header() {
 }
 
 function Menu() {
-  return (
+    const pizzas = 
+    return (
     <main className="menu">
-      <h2>Our Menu</h2>
-      <ul className="pizzas">
+    <h2>Our Menu</h2>
+    <ul className="pizzas">
         {pizzaData.map((pizza) => (
-          <Pizza pizzaObj={pizza} key={pizza.name} />
+        <Pizza pizzaObj={pizza} key={pizza.name} />
         ))}
-      </ul>
-      {/* <Pizza
+    </ul>
+    {/* <Pizza
         name="Pizza Spinaci"
         ingredients="Tomato, mozarella, spinach, and ricotta cheese"
         photoName="pizzas/spinaci.jpg"
         price={10}
-      />
-      <Pizza
+    />
+    <Pizza
         name="Pizza Funghi"
         ingredients="Tomato, Mushrooms"
         price={12}
         photoName="pizzas/funghi.jpg"
-      /> */}
+    /> */}
     </main>
   );
 }
 
 function Pizza(props) {
-  console.log(props);
-  return (
+    console.log(props);
+    return (
     <li className="pizza">
-      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
-      <div>
+        <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+        <div>
         <h3>{props.pizzaObj.name}</h3>
         <p>{props.pizzaObj.ingredients}</p>
         <span>{props.pizzaObj.price}</span>
-      </div>
+        </div>
     </li>
-  );
+    );
 }
 
 function Footer() {
-  const hour = new Date().getHours();
-  const openHour = 12;
-  const closeHour = 22;
-  const isOpen = hour >= openHour && hour <= closeHour;
-  console.log(isOpen);
+    const hour = new Date().getHours();
+    const openHour = 12;
+    const closeHour = 22;
+    const isOpen = hour >= openHour && hour <= closeHour;
+    console.log(isOpen);
 
-  //   if (hour >= openHour && hour <= closeHour)
-  //     alert("Doors open. Ovens hot. Cravings welcome.");
-  //   else alert("Doors closed. Ovens cooled. Cravings postponed. See you soon!");
+    //   if (hour >= openHour && hour <= closeHour)
+    //     alert("Doors open. Ovens hot. Cravings welcome.");
+    //   else alert("Doors closed. Ovens cooled. Cravings postponed. See you soon!");
 
-  return (
+    return (
     <footer className="footer">
-      {isOpen && (
+        {isOpen && (
         <div className="order">
-          <p>
+            <p>
             Doors Open until {closeHour}:00. Ovens hot. Cravings welcome. Come
             visit or order online
-          </p>
-          <button className="btn">Order Your Pizza</button>
+            </p>
+            <button className="btn">Order Your Pizza</button>
         </div>
-      )}
+        )}
     </footer>
-  );
-  //   return React.createElement(
-  //     "footer",
-  //     null,
-  //     "Doors open. Ovens hot. Cravings welcome."
-  //   );
+    );
+    //   return React.createElement(
+    //     "footer",
+    //     null,
+    //     "Doors open. Ovens hot. Cravings welcome."
+    //   );
 }
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
